@@ -1,0 +1,17 @@
+In Windows:
+First goto the particular Kafka windows distribution folder,for example:
+E:\kafka\kafka_2.12-3.4.0\bin\windows
+To start the zookeeper server:
+./zookeeper-server-start.bat ../../config/zookeeper.properties
+
+To start the kafka server:
+./kafka-server-start.bat ../../config/server.properties
+
+To create a Topic with 3 partitions and with only one backup or replication:
+./kafka-topics.bat --bootstrap-server localhost:9092 --create --topic sumit-first-topic --partitions 3 --replication-factor 1
+
+To start a publisher and send message
+./kafka-console-producer.bat --broker-list localhost:9092 --topic  sumit-first-topic-1
+
+To start a consumer and listen to the message from the beginning
+./kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic sumit-topic-821 --from-beginning
